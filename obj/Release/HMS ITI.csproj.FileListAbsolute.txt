@@ -1,0 +1,62 @@
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\HMS ITI.dll.config
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\HMS ITI.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\HMS ITI.pdb
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\EntityFramework.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\EntityFramework.SqlServer.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Helpers.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Mvc.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Razor.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.Razor.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\EntityFramework.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\EntityFramework.SqlServer.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Razor.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.Razor.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Helpers.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Mvc.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Release\HMS ITI.csprojAssemblyReference.cache
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Release\HMS_ITI.Migrations.ssssssssssssssssssssssssssssssssssssssss.resources
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Release\HMS_ITI.Migrations.plz.resources
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Release\HMS_ITI.Migrations.hhhhhhhhhhhhh.resources
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Release\HMS_ITI.Migrations.yyy.resources
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Release\HMS ITI.csproj.GenerateResource.cache
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Release\HMS ITI.csproj.CoreCompileInputs.cache
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Release\HMS ITI.csproj.CopyComplete
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Release\HMS ITI.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Release\HMS ITI.pdb
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Release\HMS_ITI.Migrations.www.resources
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\HMS ITI.dll.config
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\HMS ITI.dll
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\HMS ITI.pdb
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\EntityFramework.dll
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\EntityFramework.SqlServer.dll
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\Microsoft.Web.Infrastructure.dll
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\System.Web.Helpers.dll
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\System.Web.Mvc.dll
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\System.Web.Razor.dll
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.Deployment.dll
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.dll
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.Razor.dll
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\EntityFramework.xml
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\EntityFramework.SqlServer.xml
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\System.Web.Razor.xml
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.xml
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.Deployment.xml
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.Razor.xml
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\System.Web.Helpers.xml
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\bin\System.Web.Mvc.xml
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\obj\Release\HMS ITI.csprojAssemblyReference.cache
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\obj\Release\HMS_ITI.Migrations.ssssssssssssssssssssssssssssssssssssssss.resources
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\obj\Release\HMS_ITI.Migrations.plz.resources
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\obj\Release\HMS_ITI.Migrations.hhhhhhhhhhhhh.resources
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\obj\Release\HMS_ITI.Migrations.yyy.resources
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\obj\Release\HMS_ITI.Migrations.www.resources
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\obj\Release\HMS ITI.csproj.GenerateResource.cache
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\obj\Release\HMS ITI.csproj.CoreCompileInputs.cache
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\obj\Release\HMS ITI.csproj.CopyComplete
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\obj\Release\HMS ITI.dll
+E:\career\Iti intensive training\desctop\مشروع التخرج\v4\HMS ITI\HMS ITI\obj\Release\HMS ITI.pdb

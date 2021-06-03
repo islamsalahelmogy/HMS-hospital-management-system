@@ -1,0 +1,104 @@
+﻿@model IEnumerable<HMS_ITI.Models.ViewModel.PatientVisitsViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<style>
+    h5 {
+        font-size: 20px;
+    }
+
+    #Search {
+        outline: none;
+        border: 2px solid #00887a;
+        padding: 10px;
+        width: 30%;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        border-left: 0;
+    }
+
+    #SearchBtn {
+        padding: 12px 20px;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+        outline: none;
+        border: 0;
+        background-color: #00887a;
+        color: #FFF;
+        font-weight: bold;
+    }
+
+    .table-striped > tbody > tr:nth-of-type(even) {
+        background-color: #c2d4c4;
+    }
+</style>
+@using (Html.BeginForm("search", "PatientVisitsDetails", FormMethod.Get))
+{
+    <h5><label> ادخل رقم النظم : </label></h5>
+    @Html.TextBox("Search")<input type="submit" id="SearchBtn" value="بحث" /><br /><br />
+}
+
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <div class="container" style="border:2px">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.DisplayFor(modelItem => item.date)
+                        </div>
+                        <div class="col-md-3">
+                            @Html.DisplayFor(modelItem => item.DepartmentName)
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p> <b>التشخيص:</b></p>
+
+                            @Html.DisplayFor(modelItem => item.diagnoses)
+                        </div>
+
+                        <div class="col-md-3">
+                            <p><b>الادوية:</b></p>
+
+                            <ul>
+                                @foreach (var item2 in item.register_Medicines)
+                                {
+
+                                    <li>
+                                        @Html.DisplayFor(modelItem => item2)
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <p><b>بيانات حرجة:</b></p>
+                            <ul>
+                                @foreach (var item3 in item.critical_Datas)
+                                {
+
+                                    <li>
+                                        @Html.DisplayFor(modelItem => item3)
+                                    </li>
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    }
+}

@@ -1,0 +1,64 @@
+﻿@model  List<HMS_ITI.Models.ViewModel.Role_ActName>
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;">تقسيم الصـــلاحيــات</span>
+</div>
+<br />
+@using (Html.BeginForm("Edit", "Role", FormMethod.Post, new { autocomplete = "off" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                    <li><a data-action="close"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel-body">
+
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <h5 style="font-style:italic"><label>  اســم الصـــلاحيــة </label></h5>
+                    <input type="text" value="@ViewBag.rolename" name="RoleName" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <div style="margin-right:10px ;display:inline-block; width:20%;background-color:rgb(170, 228, 212);height:25px; margin-top:10px;padding-top:5px;">
+                          @*  @Html.CheckBoxFor(m => Model[i].Checked, new { @id = @Model[i].actionId ,@class="checkbox checkbox-inline"})*@
+                            @if(Model[i].Checked==true)
+                                {
+                                   <input type="checkbox" value="@Model[i].Checked" checked name="@Model[i].actionId" class="checkbox checkbox-inline"/>
+                                }
+                            else
+                            {
+                                <input type="checkbox" value="@Model[i].Checked" name="@Model[i].actionId" class="checkbox checkbox-inline" />
+                            }
+                            @Html.Label(Model[i].actionShowName)
+                        </div>
+                    }
+                </div>
+                <br />
+                <br />
+                <div class="text-right col-lg-12">
+                    <button type="submit" class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma">Submit <i class=" icon-arrow-left13 position-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@

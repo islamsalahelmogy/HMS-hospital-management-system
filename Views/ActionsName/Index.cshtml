@@ -1,0 +1,70 @@
+﻿@model IEnumerable<HMS_ITI.Models.ActionsName>
+
+@{
+    ViewBag.Title = "الصفحات";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:16px;padding:5px 30px;">الصفحات</span>
+</div>
+<style>
+    #fixedbutton {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: seagreen;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        padding: 7px;
+    }
+</style>
+<br />
+<a href='@Url.Action("AddAction", "ActionsName")'>
+    <div id="fixedbutton">
+        <span class="glyphicon glyphicon-plus" style="font-size:25px;color:lightblue"></span>
+    </div>
+</a>
+
+
+
+
+<br />
+<table class="table table-hover table-striped table-responsive">
+    <tr style="background-color: #c2d4c4">
+        <th>
+            @Html.DisplayNameFor(model => model.ActionName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowName)
+        </th>
+        <th></th>
+    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActionName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShowName)
+                </td>
+                <td>
+                    <a href='@Url.Action("Edit", "ActionsName", new { id = item.ID})'>
+                        <span class="glyphicon glyphicon-edit " style="font-size:15px;padding:10px 10px"></span>
+                    </a> |
+                    <a href='@Url.Action("Delete", "ActionsName", new { id = item.ID })' onclick="return confirm('هل انت متأكد من المسح؟')">
+                        <span class="glyphicon glyphicon-trash " style="font-size:15px;padding:10px 10px"></span>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+

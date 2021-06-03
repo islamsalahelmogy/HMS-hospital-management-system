@@ -1,0 +1,43 @@
+﻿@model HMS_ITI.Models.Department
+@{
+    ViewBag.Title = "تعديل قسم";
+
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+
+}
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;">تعديل مهنة</span>
+</div>
+<br />
+@using (Html.BeginForm("Edit", "Department", FormMethod.Post, new { autocomplete = "off" }))
+{
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <div class="heading-elements">
+            </div>
+        </div>
+
+
+        @Html.HiddenFor(ww => ww.ID);
+        <div class="panel-body">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.DepartmentName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(ww => ww.DepartmentName, new {  @class = "form-control",
+                   placeholder = "اسم القسم"
+               })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.DepartmentName, "", htmlAttributes: new { @class = "Error text-danger" })
+                    </b>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="form-group">
+                <div class="text-right col-lg-12">
+                    <button type="submit" class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma">تم <i class=" icon-arrow-left13 position-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

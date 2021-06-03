@@ -1,0 +1,406 @@
+﻿@model IEnumerable<HMS_ITI.Models.Staff>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HMS</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/temp/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="~/temp/css/swiper.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="~/temp/css/style.css">
+    <style>
+        .subscribe-banner {
+            padding: 80px 0;
+            background: url("../temp/images/subscribe-bg.png") no-repeat center;
+            background-size: cover;
+            text-align: center;
+        }
+
+        .our-departments {
+            padding: 100px 0;
+            background: url(../temp/images/departments-bg.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        .site-footer {
+            position: relative;
+            padding: 48px 0;
+            background: url("../temp/images/footer-bg.png") no-repeat center #fff;
+            background-size: cover;
+            font-size: 14px;
+            color: #828282;
+        }
+
+        input::placeholder {
+            color: black;
+            display: block;
+            padding: 16px 0;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1;
+            color: #404040;
+            text-decoration: none;
+            transition: color .35s;
+        }
+
+        .login {
+            max-width: 100px;
+            margin: 24px auto !important;
+            margin-top: 24px;
+            border-color: transparent;
+            background: -moz-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%); /* ff3.6+ */
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(50,200,250,1)), color-stop(100%, rgba(88,125,228,1))); /* safari4+,chrome */
+            background: -webkit-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%); /* safari5.1+,chrome10+ */
+            background: -o-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%); /* opera 11.10+ */
+            background: -ms-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%); /* ie10+ */
+            background: linear-gradient(270deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%); /* w3c */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#18a3eb', endColorstr='#587de4',GradientType=1 ); /* ie6-9 */
+            color: #fff;
+            border-radius: 20px;
+            color: black;
+            /*display: block;*/
+            /*font-size: 15px;
+            font-weight: 600;
+            line-height: 1;
+            color: #404040;
+            text-decoration: none;
+            transition: color .35s;
+            width: 100px;*/
+        }
+
+        .single-page .site-header {
+            position: relative;
+            padding: 14px 0 140px;
+            background-color: #f0f4f8;
+        }
+    </style>
+</head>
+<body class="single-page">
+    <header class="site-header">
+        <div class="nav-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="site-branding d-flex align-items-center">
+                            <a class="d-block" href="#" rel="home"><img class="d-block" src="~/temp/images/logos.png" alt="logo"></a>
+                        </div><!-- .site-branding -->
+                        <form action="/Login/login" method="post" autocomplete="off">
+                            <nav class="site-navigation d-flex justify-content-end align-items-center">
+                                <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
+                                    <li class="current-menu-item">@Html.ActionLink("Home", "Index", "RequestRegisterClinics")</li>
+
+                                    <li>
+                                        @*@Html.ActionLink("About Us","DisplayAboutUs", "Staff")*@
+                                        <a href="/staff/DisplayAboutUs"> About Us</a>
+                                    </li>
+                                    <!-- <li><a href="services.html">Services</a></li>
+                <li><a href="news.html">News</a></li> -->
+                                    <li>@Html.ActionLink("Contact", "Contact", "RequestRegisterClinics")</li>
+
+                                    @*<li>@Html.ActionLink("Login", "Login", "RequestRegisterClinics")</li>*@
+
+                                    <li class="call-btn button gradient-bg mt-3 mt-md-0">
+                                        <a class="d-flex justify-content-center align-items-center" href="#">
+                                            <input type="text" name="Username" id="Username" placeholder="Username" style="background-color:transparent; border:none;color:black;outline:none;color:black;" />
+                                        </a>
+                                    </li>
+
+                                    <li class="call-btn button gradient-bg mt-3 mt-md-0">
+                                        <a class="d-flex justify-content-center align-items-center" href="#">
+                                            <input type="password" name="password" id="password" placeholder="Password" style="background-color:transparent; border:none; color:black;outline:none;color:black;" />
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <input type="submit" class="login" style="background-color:transparent; border:none; color:white; width:100px" />
+                                    </li>
+
+                                </ul>
+                            </nav><!-- .site-navigation -->
+                        </form>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .nav-bar -->
+
+        @*<div class="swiper-container hero-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide hero-content-wrap" style="background-image:url('../temp/images/hero.jpg')">
+                    <div class="hero-content-overlay position-absolute w-100 h-100">
+                        <div class="container h-100">
+                            <div class="row h-100">
+                                <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
+                                    <header class="entry-header">
+                                        <h1>The Best <br>Medical Services</h1>
+                                    </header><!-- .entry-header -->
+
+                                    <div class="entry-content mt-4">
+                                        <p>A hospital is a health care institution providing patient treatment with specialized medical and nursing staff and medical equipment.</p>
+                                    </div><!-- .entry-content -->
+
+                                    <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
+                                        <a href="#" class="button gradient-bg">Read More</a>
+                                    </footer><!-- .entry-footer -->
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                        </div><!-- .container -->
+                    </div><!-- .hero-content-overlay -->
+                </div><!-- .hero-content-wrap -->
+
+                <div class="swiper-slide hero-content-wrap" style="background-image: url('../temp/images/hero.jpg')">
+                    <div class="hero-content-overlay position-absolute w-100 h-100">
+                        <div class="container h-100">
+                            <div class="row h-100">
+                                <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
+                                    <header class="entry-header">
+                                        <h1>The Best <br>Medical Services</h1>
+                                    </header><!-- .entry-header -->
+
+                                    <div class="entry-content mt-4">
+                                        <p>The medical facility smaller than a hospital is generally called a clinic. Hospitals have a range of departments</p>
+                                    </div><!-- .entry-content -->
+
+                                    <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
+                                        <a href="#" class="button gradient-bg">Read More</a>
+                                    </footer><!-- .entry-footer -->
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                        </div><!-- .container -->
+                    </div><!-- .hero-content-overlay -->
+                </div><!-- .hero-content-wrap -->
+
+                <div class="swiper-slide hero-content-wrap" style="background-image: url('../temp/images/hero.jpg')">
+                    <div class="hero-content-overlay position-absolute w-100 h-100">
+                        <div class="container h-100">
+                            <div class="row h-100">
+                                <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
+                                    <header class="entry-header">
+                                        <h1>The Best <br>Medical Services</h1>
+                                    </header><!-- .entry-header -->
+
+                                    <div class="entry-content mt-4">
+                                        <p>Currently, hospitals are largely staffed by professional physicians, surgeons, nurses, and allied health practitioners, whereas in the past, this work was usually performed by the members of founding religious orders or by volunteers. However, there are various Catholic religious orders, such as the Alexians and the Bon Secours Sisters that still focus on hospital ministry in the late 1990s</p>
+                                    </div><!-- .entry-content -->
+
+                                    <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
+                                        <a href="#" class="button gradient-bg">Read More</a>
+                                    </footer><!-- .entry-footer -->
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                        </div><!-- .container -->
+                    </div><!-- .hero-content-overlay -->
+                </div><!-- .hero-content-wrap -->
+            </div><!-- .swiper-wrapper -->
+
+            <div class="pagination-wrap position-absolute w-100">
+                <div class="swiper-pagination d-flex flex-row flex-md-column"></div>
+            </div><!-- .pagination-wrap -->
+        </div>*@
+            @*<div class="pagination-wrap position-absolute w-100">
+                <div class="swiper-pagination d-flex flex-row flex-md-column"></div>
+            </div>*@<!-- .pagination-wrap -->
+    </header><!-- .site-header -->
+
+    <div class="med-history">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-12 col-lg-6">
+                    <h2>HMS History</h2>
+
+                    <p>To be the nation’s preeminent resource in advancing community healthcare.</p>
+
+                    <a class="d-inline-block button gradient-bg" href="#">Read More</a>
+                </div>
+
+                <div class="col-12 col-lg-6 mt-5 mt-lg-0">
+                    <img class="responsive" src="~/temp/images/about.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-stuff">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Faq & Stuff</h2>
+                </div>
+
+                <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+                    <div class="accordion-wrap type-accordion">
+                        <h3 class="entry-title d-flex justify-content-between align-items-center active">Mission<span class="arrow-r"></span></h3>
+
+                        <div class="entry-content">
+                            <p>To guide, support and enhance the mission of community hospitals and healthcare providers.</p>
+                        </div>
+
+                        <h3 class="entry-title d-flex justify-content-between align-items-center">Vision <span class="arrow-r"></span></h3>
+
+                        <div class="entry-content">
+                            <p>To be the nation’s preeminent resource in advancing community healthcare.</p>
+                        </div>
+
+                        <h3 class="entry-title d-flex justify-content-between align-items-center">Values<span class="arrow-r"></span></h3>
+
+                        <div class="entry-content">
+                            <p>
+                                Our values define what we stand for, guide our actions and help drive our strategies.
+
+                                Respect, Integrity, Stewardship, Excellence
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6 mt-5 mt-lg-0">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="professional-box">
+                                <h2 class="d-flex align-items-center">Professional</h2>
+
+                                <img src="~/temp/images/cardiogram-2.png" alt="">
+
+                                <p>Practical solutions that help community hospitals enhance efficiencies.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="quality-box">
+                                <h2 class="d-flex align-items-center">Quality</h2>
+
+                                <img src="~/temp/images/hospital.png" alt="">
+
+                                <p>Improve quality and strengthen financial stability and protect community./p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="medical-team">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>The Medical Team</h2>
+                </div>
+
+                @foreach (var item in Model)
+                {
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="the-news-wrap">
+                            <figure class="post-thumbnail">
+                                <a href="#"> <img src="~/images/@item.Image" />  </a>   @*~/images/*@
+                            </figure>
+                            <header class="entry-header">
+                                <h3>@item.FullName</h3>
+                                <div class="entry-content">
+                                    <p>
+                                        @item.Position
+                                    </p>
+                                </div>
+                                <div class="post-metas d-flex flex-wrap align-items-center">
+                                    <div class="posted-date"><label>Date: </label><a href="#">@item.HireDate</a></div>
+
+                                </div>
+                            </header>
+                            <div class="entry-content">
+                                <p>
+                                    @item.Bio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+
+        <div class="subscribe-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8 offset-lg-2">
+                        <h2>Subscribe to our newsletter</h2>
+
+                        <form>
+                            <input type="email" placeholder="E-mail address">
+                            <input class="button gradient-bg" type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-widgets">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="foot-about">
+                                <h2><a href="#"><img src="~/temp/images/logos.png" alt=""></a></h2>
+
+                                <p>Offers practical solutions that help community hospitals enhance efficiencies, improve quality and strengthen financial stability—and most importantly, we help preserve and protect community healthcare.</p>
+
+                                <p class="copyright">
+                                    <!-- Link back to Colorlib can't be removed. template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;
+                                    <script>document.write(new Date().getFullYear());</script> All rights reserved | <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Monster team GG</a>
+                                    <!-- Link back to Colorlib can't be removed. template is licensed under CC BY 3.0. -->
+                                </p>
+                            </div><!-- .foot-about -->
+                        </div><!-- .col -->
+
+                        <div class="col-12 col-md-6 col-lg-4 mt-5 mt-md-0">
+                            <div class="foot-contact">
+                                <h2>Contact</h2>
+
+                                <ul class="p-0 m-0">
+                                    <li><span>Address:</span>Ismailia</li>
+                                    <li><span>Phone:</span>01063979508</li>
+                                    <li><span>Email:</span>islamelmogy_94@yahoo.com</li>
+                                </ul>
+                            </div>
+                        </div><!-- .col -->
+
+                        <div class="col-12 col-md-6 col-lg-4 mt-5 mt-md-0">
+                            <div class="foot-links">
+                                <h2>Usefull Links</h2>
+
+                                <ul class="p-0 m-0">
+                                    <li>@Html.ActionLink("Home", "Index", "RequestRegisterClinics")</li>
+                                    <li><a href="/Staff/DisplayAboutUs">About us</a></li>
+                                    <li><a href="#">Departments</a></li>
+                                    <li>@Html.ActionLink("Contact", "Contact", "RequestRegisterClinics")</li>
+                                    <li>@Html.ActionLink("FAQ", "Index", "RequestRegisterClinics")</li>
+
+                                </ul>
+                            </div><!-- .foot-links -->
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- .container -->
+            </div><!-- .footer-widgets -->
+        </footer><!-- .site-footer -->
+
+
+        <script type='text/javascript' src='~/temp/js/jquery.js'></script>
+        <script type='text/javascript' src='~/temp/js/jquery.collapsible.min.js'></script>
+        <script type='text/javascript' src='~/temp/js/swiper.min.js'></script>
+        <script type='text/javascript' src='~/temp/js/jquery.countdown.min.js'></script>
+        <script type='text/javascript' src='~/temp/js/circle-progress.min.js'></script>
+        <script type='text/javascript' src='~/temp/js/jquery.countTo.min.js'></script>
+        <script type='text/javascript' src='~/temp/js/jquery.barfiller.js'></script>
+        <script type='text/javascript' src='~/temp/js/custom.js'></script>
+</body>
+</html>

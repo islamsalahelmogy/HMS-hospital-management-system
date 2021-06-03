@@ -1,0 +1,129 @@
+﻿@model HMS_ITI.Models.ViewModel.DatesViewModel
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    var p = ViewBag.p as IEnumerable<HMS_ITI.Models.ViewModel.patientVisitswithnamesViewModel>;
+}
+<style>
+
+    #Submit {
+        padding: 12px 20px;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        outline: none;
+        border: 0;
+        background-color: #00887a;
+        color: #FFF;
+        font-weight: bold;
+        margin-right: 47%;
+    }
+
+    .table-striped > tbody > tr:nth-of-type(even) {
+        background-color: #c2d4c4;
+    }
+</style>
+@using (Html.BeginForm("setdata", "Visits"))
+{
+    
+        <div class="panel panel-default" style="width:550px;margin: 0 auto;background-color:azure">
+            <div class="panel-heading" style="margin: 0 auto;width:200px;background-color:azure">
+                <h4 style="color:darkcyan"><b>ادخل االفترة الزمنية</b></h4>
+            </div>
+            <div class="panel-body" style="margin: 0 auto">
+                <div class="container" style="border:2px">
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <h6><b>من</b></h6>
+                        </div>
+                        <div class="col-sm-2" style="width:150px">
+                            <input type="date" name="StartDate" id="fromDate" class="form-control" />
+                        </div>
+                        <div class="col-sm-1">
+                            <h6> <b>الي</b></h6>
+                        </div>
+                        <div class="col-sm-2" style="width:150px">
+                            <input type="date" name="EndDate" id="toDate" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <br />
+    <input type="submit" id="Submit" value="اعرض" />
+}
+
+@if (p != null)
+{
+    <h1 style="margin-right:80%"> عدد الزيارات  @p.Count()</h1>
+    foreach (var item in p)
+    {
+        <div class="container" style="border:2px">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.DisplayFor(modelItem => item.FName)
+                            @Html.DisplayFor(modelItem => item.sName)
+                            @Html.DisplayFor(modelItem => item.tName)
+                            @Html.DisplayFor(modelItem => item.FoName)
+                        </div>
+                        <div class="col-md-3">
+                            @Html.DisplayFor(modelItem => item.date)
+                        </div>
+                        <div class="col-md-3">
+                            @Html.DisplayFor(modelItem => item.DepartmentName)
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p> <b>التشخيص:</b></p>
+
+                            @Html.DisplayFor(modelItem => item.diagnoses)
+                        </div>
+
+                        <div class="col-md-3">
+                            <p><b>الادوية:</b></p>
+
+                            <ul>
+                                @foreach (var item2 in item.register_Medicines)
+                                {
+
+                                    <li>
+                                        @Html.DisplayFor(modelItem => item2)
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <p><b>بيانات حرجة:</b></p>
+                            <ul>
+                                @foreach (var item3 in item.critical_Datas)
+                                {
+
+                                    <li>
+                                        @Html.DisplayFor(modelItem => item3)
+                                    </li>
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    }
+}
+@if (p == null)
+{
+    <h1 >لا توجد زيارات </h1>
+}

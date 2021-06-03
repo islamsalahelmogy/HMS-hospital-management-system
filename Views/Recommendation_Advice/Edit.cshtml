@@ -1,0 +1,44 @@
+﻿@model HMS_ITI.Models.Recommendation_Advice
+@{
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+
+}
+
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;">تعديل توصية طبية</span>
+</div>
+<br />
+@using (Html.BeginForm("Edit", "Recommendation_Advice", FormMethod.Post, new { autocomplete = "off" }))
+{
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <div class="heading-elements">
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="col-sm-12">
+                @Html.HiddenFor(model => model.ID)
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.Recommendation, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    @Html.TextBoxFor(model => model.Recommendation, new
+                    {
+                        @class = "form-control",
+                        placeholder = "توصية طبية"
+                    })
+                    <b>
+                        @Html.ValidationMessageFor(model => model.Recommendation, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="text-right col-lg-12">
+                    <button type="submit" class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma">تعديل <i class=" icon-arrow-left13 position-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

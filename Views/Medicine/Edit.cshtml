@@ -1,0 +1,103 @@
+﻿@model HMS_ITI.Models.Medicine
+@{
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+
+}
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;">تعديل دواء</span>
+</div>
+<br />
+@using (Html.BeginForm("Edit", "Medicine", FormMethod.Post, new { autocomplete = "off" }))
+{
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <div class="heading-elements">
+            </div>
+        </div>
+
+        <div class="panel-body">
+            @Html.HiddenFor(model => model.ID)
+            @Html.HiddenFor(model => model.DateMedicinRegister)
+            <div class="col-sm-6">
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.IDMedicin, htmlAttributes: new { @class = "control-label col-sm-12" })
+
+                    @Html.TextBoxFor(model => model.IDMedicin, new
+                    {
+                        @class = "form-control",
+                        placeholder = "الرقم المسلسل"
+                    })
+                    <b>
+                        @Html.ValidationMessageFor(model => model.IDMedicin, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.MedNameEnglish, htmlAttributes: new { @class = "control-label col-sm-12" })
+
+                    @Html.TextBoxFor(model => model.MedNameEnglish, new
+                    {
+                        @class = "form-control",
+                        placeholder = " بالانجليزية"
+                    })
+                    <b>
+                        @Html.ValidationMessageFor(model => model.MedNameEnglish, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.MedNameArabic, htmlAttributes: new { @class = "control-label col-sm-12" })
+
+                    @Html.TextBoxFor(model => model.MedNameArabic, new
+                    {
+                        @class = "form-control",
+                        placeholder = "بالعربية"
+                    })
+                    <b>
+                        @Html.ValidationMessageFor(model => model.MedNameArabic, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.AllowedCurrent, htmlAttributes: new { @class = "control-label col-sm-12" })
+
+                    @Html.TextBoxFor(model => model.AllowedCurrent, new
+                    {
+                        @class = "form-control",
+                        placeholder = "الحد الاقصى"
+                    })
+                    <b>
+                        @Html.ValidationMessageFor(model => model.AllowedCurrent, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.PartGroupId, htmlAttributes: new { @class = "control-label col-sm-12" })
+
+                    @Html.DropDownListFor(model => model.PartGroupId, ViewBag.medprt as SelectList, htmlAttributes: new { @class = "select-menu-color" })
+                    <b>
+                        @Html.ValidationMessageFor(model => model.PartGroupId, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.ShapeId, htmlAttributes: new { @class = "control-label col-sm-12" })
+
+                    @Html.DropDownListFor(model => model.ShapeId, ViewBag.medshp as SelectList, htmlAttributes: new { @class = "select-menu-color" })
+                    <b>
+                        @Html.ValidationMessageFor(model => model.ShapeId, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.CompanyId, htmlAttributes: new { @class = "control-label col-sm-12" })
+
+                    @Html.DropDownListFor(model => model.CompanyId, ViewBag.medcmp as SelectList, htmlAttributes: new { @class = "select-menu-color" })
+                    <b>
+                        @Html.ValidationMessageFor(model => model.CompanyId, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+}
+

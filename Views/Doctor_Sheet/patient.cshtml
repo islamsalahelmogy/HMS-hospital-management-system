@@ -1,0 +1,72 @@
+﻿@model HMS_ITI.Models.Patient
+@{
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div style="padding-top:25px">
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <div class="heading-elements">
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="col-sm-6">
+                <div class="col-md-6">
+                    <div><span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;">بيانات المريض</span></div>
+                    <br />
+                    <ul id="patientlist">
+                        <li><b>اسم المريض:</b> @Model.FirstName @Model.SecondName @Model.ThirdName @Model.FourthName </li>
+                        <li><b>الرقم القومى:</b> @Model.SSN</li>
+                        <li><b>تاريخ الميلاد: </b> @Model.BirthDate</li>
+                        <li><b>العمر: </b> @Model.Age</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="col-md-7" style="margin-right:60%">
+                    <div style=" width:150px;height:180px; text-align:center;padding:10px" class="table-bordered">
+                        <a style="padding-left:5px" href="@Url.Action("roshta",new {Model.ID_Nozom})"><i class="fa fa-hospital-o" style="font-size:48px;color:red"></i></a>
+                        <a href="@Url.Action("roshta",new {Model.ID_Nozom})"><i class="fa fa-medkit" style="font-size:48px;color:red"></i></a>
+                        <a style="padding-left:5px" href="@Url.Action("roshta",new {Model.ID_Nozom})"><i class="fa fa-user-md" style="font-size:48px;color:red"></i></a>
+                        <a href="@Url.Action("roshta",new {Model.ID_Nozom})"><i class="fa fa fa-heartbeat" style="font-size:48px;color:red"></i></a>
+                        <a style="padding-left:5px" href="@Url.Action("roshta",new {Model.ID_Nozom})"><i class="fa fa-stethoscope" style="font-size:48px;color:red"></i></a>
+                        <a href="@Url.Action("roshta",new {Model.ID_Nozom})"><i class="fa fa fa-wheelchair" style="font-size:48px;color:red"></i></a>
+                    </div>
+                </div>
+            </div>
+            <style type="text/css">
+                table {
+                    border: solid 1px darkgreen;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                #patientlist {
+                    background-color: lightblue;
+                    width: 100%;
+                }
+
+                a {
+                }
+            </style>
+
+        </div>
+    </div>
+    <div id="ro4ta">
+        @Html.Action("GetRegMeds");
+    </div>
+
+    <div id="twsia">
+        @Html.Action("GetRecAdvs");
+    </div>
+
+    <div id="7rga">
+        @Html.Action("GetCritData");
+    </div>
+
+    <div id="t45is">
+        @Html.Action("GetDiag");
+    </div>
+
+</div>

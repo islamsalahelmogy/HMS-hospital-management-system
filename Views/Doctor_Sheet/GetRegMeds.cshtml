@@ -1,0 +1,185 @@
+﻿@model HMS_ITI.Models.Register_Medicine
+@{
+    var medicine = (IEnumerable<HMS_ITI.Models.ViewModel.Register_MedicinesViewModel>)ViewBag.med;
+    var flag1 = true;
+    var flag2 = true;
+    var flag3 = true;
+}
+
+
+
+
+
+<style>
+
+    .table-striped > tbody > tr:nth-child(odd) > td,
+    .table-striped > tbody > tr:nth-child(odd) > th {
+        background-color: #c2d4c4;
+    }
+
+    
+
+    #delete {
+        color: #00887a;
+    }
+
+        #delete:hover,
+        #delete:active,
+        #delete:focus {
+            color: red;
+        }
+        td,th
+        {
+            text-align:center
+        }
+</style>
+
+
+
+
+
+@using (Html.BeginForm("RegMed", "Doctor_Sheet", FormMethod.Post, new { autocomplete = "off" }))
+{
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <div class="heading-elements">
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.ID_Medicin, htmlAttributes: new { @class = "control-label col-sm-12" })
+
+                    @Html.DropDownListFor(model => model.ID_Medicin, ViewBag.mednames as SelectList, htmlAttributes: new { @class = "select-menu-color" })
+                    <b>
+                        @Html.ValidationMessageFor(model => model.ID_Medicin, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    @Html.LabelFor(ww => medicine.First().numtake, htmlAttributes: new { @class = "control-label col-sm-12" })
+
+                    <select multiple size="1" class="form-control" name="IdNumberOfTakeMedicin" id="IdNumberOfTakeMedicin">
+                        @foreach (var item in ViewBag.tkmed1)
+                        {
+                            if (flag1)
+                            {
+                                <option style="font-size:16px;" value="@item.Value" selected>@item.Text</option>
+                            }
+                            else
+                            {
+                                <option style="font-size:16px;" value="@item.Value">@item.Text</option>
+                            }
+                            flag1 = false;
+                        }
+                    </select>
+
+                    <b>
+                        @Html.ValidationMessageFor(model => medicine.First().numtake, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    @Html.LabelFor(ww => medicine.First().timetake1, htmlAttributes: new { @class = "control-label col-sm-12" })
+                    <select multiple size="1" class="form-control" name="IdTimeTakeMedicin1" id="IdTimeTakeMedicin1">
+                        @foreach (var item in ViewBag.tkmed2)
+                        {
+                            if (flag2)
+                            {
+                                <option style="font-size:16px;" value="@item.Value" selected>@item.Text</option>
+                            }
+                            else
+                            {
+                                <option style="font-size:16px;" value="@item.Value">@item.Text</option>
+                            }
+                            flag2 = false;
+                        }
+                    </select>
+
+                    <b>
+                        @Html.ValidationMessageFor(ww => medicine.First().timetake1, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    @Html.LabelFor(ww => medicine.First().timetake2, htmlAttributes: new { @class = "control-label col-sm-12" })
+                    <select multiple size="1" class="form-control" name="IdTimeTakeMedicin2" id="IdTimeTakeMedicin2">
+                        @foreach (var item in ViewBag.tkmed3)
+                        {
+                            if (flag3)
+                            {
+                                <option style="font-size:16px;" value="@item.Value" selected>@item.Text</option>
+                            }
+                            else
+                            {
+                                <option style="font-size:16px;" value="@item.Value">@item.Text</option>
+                            }
+                            flag3 = false;
+                        }
+                    </select>
+
+                    <b>
+                        @Html.ValidationMessageFor(ww => medicine.First().timetake2, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="text-right col-lg-12">
+                    <button type="submit" class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma">اضافة <i class=" icon-arrow-left13 position-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+
+    <table class="table table-hover table-striped table-responsive">
+        <tr style="background-color: #c2d4c4">
+            <th>
+                @Html.DisplayNameFor(model => medicine.First().medcinid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => medicine.First().medcinname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => medicine.First().numtake)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => medicine.First().timetake1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => medicine.First().timetake2)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in medicine)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.medcinid)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.medcinname)
+            </td>
+            <th>
+                @Html.DisplayFor(model => item.numtake)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.timetake1)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.timetake2)
+            </th>
+            <td>
+                @Html.ActionLink(" ", "DeleteReg", new { id = item.medcinid }, htmlAttributes: new { @class = "btn btn-outline-danger btn-sm glyphicon glyphicon-trash", @onclick = "return confirm('Are you sure !')", id = "delete" })
+            </td>
+        </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,53 @@
+﻿@model HMS_ITI.Models.Role
+@{
+    ViewBag.Title = "اضافة صلاحيات";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;">اضافة صلاحيات</span>
+</div>
+<br />
+@using (Html.BeginForm("AddRole", "Role", FormMethod.Post, new { autocomplete = "off" }))
+{
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <div class="heading-elements">
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.RoleNameAr, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(model => model.RoleNameAr, new
+               {
+                   @class = "form-control",
+                   placeholder = "بالعربية"
+               })
+                    <b>
+                        @Html.ValidationMessageFor(model => model.RoleNameAr, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.RoleNameEn, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(model => model.RoleNameEn, new
+               {
+                   @class = "form-control",
+                   placeholder = "بالانجليزية"
+               })
+                    <b>
+                        @Html.ValidationMessageFor(model => model.RoleNameEn, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="text-right col-lg-12">
+                    <button type="submit" class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma">اضافة <i class=" icon-arrow-left13 position-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

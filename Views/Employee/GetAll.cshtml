@@ -1,0 +1,84 @@
+﻿@model IEnumerable<HMS_ITI.Models.Employee> 
+@{ 
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;">الموظفين</span>
+</div>
+<br />
+
+<input type="button" class="btn btn-success" value="ادخال موظف جديد" onclick="location.href= '@Url.Action("AddEmp","Employee") '" />
+<br />
+<br />
+
+<table class="table table-bordered  table-hover" >
+    <tr style="background-color:darkseagreen">
+        <th>
+            @Html.DisplayNameFor(model => model.Career.CareerType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clinic_Type.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.DepartmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecondName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThirdName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FourthName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Career.CareerType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clinic_Type.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThirdName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FourthName)
+            </td>
+            <td>
+                @if (item.Image == null)
+                {
+                    <img style="display:block;" width="70" height="70" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="img-responsive" alt="avatar">
+                }
+                else
+                {
+                    <img style="display:block;" width="70" height="70" src="~/images/@Html.DisplayFor(w=>item.Image)" class="img-responsive" alt="AAAA">
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,564 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HMS</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="~/temp/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2-vsdoc.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <a href="~/Scripts/jquery-1.10.2.min.map"></a>
+    <!-- Swiper CSS -->
+
+    <link href="~/temp/css/swiper.css" rel="stylesheet" />
+
+    <!-- Styles -->
+    <script src="~/temp/js/custom.js"></script>
+
+    <link href="~/temp/css/style.css" rel="stylesheet" />
+
+    <style>
+        .subscribe-banner {
+            padding: 80px 0;
+            background: url("../temp/images/subscribe-bg.png") no-repeat center;
+            background-size: cover;
+            text-align: center;
+        }
+
+        .our-departments {
+            padding: 100px 0;
+            background: url(../temp/images/departments-bg.jpg) no-repeat;
+            background-size: cover;
+        }
+
+    .site-footer { position: relative; padding: 48px 0; background: url("../temp/images/footer-bg.png") no-repeat center #fff; background-size: cover; font-size: 14px; color: #828282; }
+
+        input::placeholder {
+            color: black;
+            display: block;
+            padding: 16px 0;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1;
+            color: #404040;
+            text-decoration: none;
+            transition: color .35s;
+        }
+        .login {
+            max-width: 100px;
+            margin: 24px auto !important;
+
+            margin-top: 24px;
+
+            border-color: transparent;
+            background: -moz-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%); /* ff3.6+ */
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(50,200,250,1)), color-stop(100%, rgba(88,125,228,1))); /* safari4+,chrome */
+            background: -webkit-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%); /* safari5.1+,chrome10+ */
+            background: -o-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%); /* opera 11.10+ */
+            background: -ms-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%); /* ie10+ */
+            background: linear-gradient(270deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%); /* w3c */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#18a3eb', endColorstr='#587de4',GradientType=1 ); /* ie6-9 */
+            color: #fff;
+            border-radius:20px;
+            color: black;
+            /*display: block;*/
+            /*font-size: 15px;
+            font-weight: 600;
+            line-height: 1;
+            color: #404040;
+            text-decoration: none;
+            transition: color .35s;
+            width: 100px;*/
+        }
+
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="site-branding d-flex align-items-center">
+                            <a class="d-block" href="#" rel="home"><img class="d-block" src="~/temp/images/logos.png" alt="logo"></a>
+                            
+                        </div><!-- .site-branding -->
+                        <form action="/Login/login" method="post" autocomplete="off">
+                            <nav class="site-navigation d-flex justify-content-end align-items-center">
+                                <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
+                                    <li class="current-menu-item">@Html.ActionLink("Home", "Index", "RequestRegisterClinics")</li>
+
+                                    <li><a href="/Staff/DisplayAboutUs">About us</a></li>
+                                    <!-- <li><a href="services.html">Services</a></li>
+                <li><a href="news.html">News</a></li> -->
+                                    <li>@Html.ActionLink("Contact", "Contact", "RequestRegisterClinics")</li>
+
+                                    @*<li>@Html.ActionLink("Login", "Login", "RequestRegisterClinics")</li>*@
+
+                                    <li class="call-btn button gradient-bg mt-3 mt-md-0">
+                                        <a class="d-flex justify-content-center align-items-center" href="#">
+                                            <input type="text" name="Username" id="Username" placeholder="Username" style="background:transparent; border:none;color:black;outline:none;color:black;" /></a>
+                                    </li>
+
+                                    <li class="call-btn button gradient-bg mt-3 mt-md-0">
+                                        <a class="d-flex justify-content-center align-items-center" href="#">
+                                            <input type="password" name="password" id="password" placeholder="Password" style="background:transparent; border:none; color:black;outline:none; color:black;" /></a>
+                                    </li>
+
+                                    <li>
+                                        <input type="submit" class="login" style="background-color:transparent; border:none; color:black; width:100px" />
+                                    </li>
+
+                                </ul>
+                            </nav><!-- .site-navigation -->
+                        </form>
+                        <div class="hamburger-menu d-lg-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div><!-- .hamburger-menu -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .nav-bar -->
+
+        <div class="swiper-container hero-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide hero-content-wrap" style="background-image:url('../temp/images/hero.jpg')">
+                    <div class="hero-content-overlay position-absolute w-100 h-100">
+                        <div class="container h-100">
+                            <div class="row h-100">
+                                <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
+                                    <header class="entry-header">
+                                        <h1>The Best <br>Medical Services</h1>
+                                    </header><!-- .entry-header -->
+
+                                    <div class="entry-content mt-4">
+                                        <p>A hospital is a health care institution providing patient treatment with specialized medical and nursing staff and medical equipment.</p>
+                                    </div><!-- .entry-content -->
+
+                                    <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
+                                        <a href="#" class="button gradient-bg">Read More</a>
+                                    </footer><!-- .entry-footer -->
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                        </div><!-- .container -->
+                    </div><!-- .hero-content-overlay -->
+                </div><!-- .hero-content-wrap -->
+
+                <div class="swiper-slide hero-content-wrap" style="background-image: url('../temp/images/hero.jpg')">
+                    <div class="hero-content-overlay position-absolute w-100 h-100">
+                        <div class="container h-100">
+                            <div class="row h-100">
+                                <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
+                                    <header class="entry-header">
+                                        <h1>The Best <br>Medical Services</h1>
+                                    </header><!-- .entry-header -->
+
+                                    <div class="entry-content mt-4">
+                                        <p>The medical facility smaller than a hospital is generally called a clinic. Hospitals have a range of departments</p>
+                                    </div><!-- .entry-content -->
+
+                                    <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
+                                        <a href="#" class="button gradient-bg">Read More</a>
+                                    </footer><!-- .entry-footer -->
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                        </div><!-- .container -->
+                    </div><!-- .hero-content-overlay -->
+                </div><!-- .hero-content-wrap -->
+
+                <div class="swiper-slide hero-content-wrap" style="background-image: url('../temp/images/hero.jpg')">
+                    <div class="hero-content-overlay position-absolute w-100 h-100">
+                        <div class="container h-100">
+                            <div class="row h-100">
+                                <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
+                                    <header class="entry-header">
+                                        <h1>The Best <br>Medical Services</h1>
+                                    </header><!-- .entry-header -->
+
+                                    <div class="entry-content mt-4">
+                                        <p>Currently, hospitals are largely staffed by professional physicians, surgeons, nurses, and allied health practitioners, whereas in the past, this work was usually performed by the members of founding religious orders or by volunteers. However, there are various Catholic religious orders, such as the Alexians and the Bon Secours Sisters that still focus on hospital ministry in the late 1990s</p>
+                                    </div><!-- .entry-content -->
+
+                                    <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
+                                        <a href="#" class="button gradient-bg">Read More</a>
+                                    </footer><!-- .entry-footer -->
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                        </div><!-- .container -->
+                    </div><!-- .hero-content-overlay -->
+                </div><!-- .hero-content-wrap -->
+            </div><!-- .swiper-wrapper -->
+
+            <div class="pagination-wrap position-absolute w-100">
+                <div class="swiper-pagination d-flex flex-row flex-md-column"></div>
+            </div><!-- .pagination-wrap -->
+        </div><!-- .hero-slider -->
+    </header><!-- .site-header -->
+
+
+    <div class="homepage-boxes">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="opening-hours">
+                        <h2 class="d-flex align-items-center">Opening Hours</h2>
+
+                        <ul class="p-0 m-0">
+                            <li>Monday - Thursday <span>8.00 - 19.00</span></li>
+                            <li>Friday <span>8.00 - 18.30</span></li>
+                            <li>Saturday <span>9.30 - 17.00</span></li>
+                            <li>Sunday <span>9.30 - 15.00</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="Sp">
+                    <div class="appointment-box">
+                        <h2 class="d-flex align-items-center"></h2>
+
+                        @RenderBody()
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="our-departments">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="our-departments-wrap">
+                        <h2>Our Departments</h2>
+
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="~/temp/images/cardiogram.png" alt="">
+
+                                        <h3>Cardioology</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p> Cardiology is a branch of medicine dealing with disorders of the heart as well as parts of the circulatory system. The field includes medical diagnosis .</p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                        <a href="#">read more</a>
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="~/temp/images/stomach-2.png" alt="">
+
+                                        <h3>Gastroenterology</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>The content on this site is intended for health professionals. Advertisements on this site do not constitute a guarantee or endorsement by the journal.</p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                        <a href="#">read more</a>
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="~/temp/images/blood-sample-2.png" alt="">
+
+                                        <h3>Medical Lab</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>Connect with medical professionals worldwide and message instantly. Most secure messaging app for the healthcare community.</p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                        <a href="#">read more</a>
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="~/temp/images/teeth.png" alt="">
+
+                                        <h3>Dental Care</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>Tooth decay and gum disease are caused by plaque, a sticky combination of bacteria and food. </p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                        <a href="#">read more</a>
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="~/temp/images/stretcher.png" alt="">
+
+                                        <h3>Surgery</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>procedure cutting through the abdominal wall to gain access to the abdominal cavity is a laparotomy. Minimally invasive procedures.</p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                        <a href="#">read more</a>
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="~/temp/images/scanner.png" alt="">
+
+                                        <h3>Neurology</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p> is the branch of medicine concerned with the study and treatment of disorders of the nervous system. </p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                        <a href="#">read more</a>
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 mb-md-0">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="~/temp/images/bones.png" alt="">
+
+                                        <h3>Orthopaedy</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>the act of pulling on a bone or limb (as in a fracture) to relieve pressure or align parts in a special way during healing; "his leg was in traction for several days" medical science - the science of dealing with the maintenance of health and the prevention and treatment of disease.</p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                        <a href="#">read more</a>
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 mb-lg-0">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="~/temp/images/blood-donation-2.png" alt="">
+
+                                        <h3>Pediatry</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>A medical doctor who specializes in this area is known as a pediatrician, or paediatrician.</p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                        <a href="#">read more</a>
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 mb-0">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="~/temp/images/glasses.png" alt="">
+
+                                        <h3>Ophthalmology</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>is a medical or osteopathic doctor who specializes in eye and vision care.</p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                        <a href="#">read more</a>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="the-news">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>The News</h2>
+
+                    <div class="row">
+
+                      @Html.Action("Display", "Faq")
+
+
+                        @*<div class="col-12 col-md-6 col-lg-4">
+            <div class="the-news-wrap">
+                <figure class="post-thumbnail">
+                    <a href="#"><img src="~/temp/images/news-2.png" alt=""></a>
+                </figure>
+
+                <header class="entry-header">
+                    <h3>All you need to know about pills</h3>
+
+                    <div class="post-metas d-flex flex-wrap align-items-center">
+                        <div class="posted-date"><label>Date: </label><a href="#">April 12, 2018</a></div>
+
+                        <div class="posted-by"><label>By: </label><a href="#">Dr. Jake Williams</a></div>
+
+                        <div class="post-comments"><a href="#">2 Comments</a></div>
+                    </div>
+                </header>
+
+                <div class="entry-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="the-news-wrap">
+                <figure class="post-thumbnail">
+                    <a href="#"><img src="~/temp/images/news-3.png" alt=""></a>
+                </figure>
+
+                <header class="entry-header">
+                    <h3>Marketing and Medicine</h3>
+
+                    <div class="post-metas d-flex flex-wrap align-items-center">
+                        <div class="posted-date"><label>Date: </label><a href="#">April 12, 2018</a></div>
+
+                        <div class="posted-by"><label>By: </label><a href="#">Dr. Jake Williams</a></div>
+
+                        <div class="post-comments"><a href="#">2 Comments</a></div>
+                    </div>
+                </header>
+
+                <div class="entry-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p>
+                </div>
+            </div>
+        </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="subscribe-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-8 offset-lg-2">
+                    <h2>Subscribe to our newsletter</h2>
+
+                    <form>
+                        <input type="email" placeholder="E-mail address">
+                        <input class="button gradient-bg" type="submit" value="Subscribe">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="foot-about">
+                            <h2><a href="#"><img src="~/temp/images/logos.png" alt=""></a></h2>
+
+                            <p>Offers practical solutions that help community hospitals enhance efficiencies, improve quality and strengthen financial stability—and most importantly, we help preserve and protect community healthcare.</p>
+
+                            <p class="copyright">
+                                <!-- Link back to Colorlib can't be removed. template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Monster team GG</a>
+                                <!-- Link back to Colorlib can't be removed. template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div><!-- .foot-about -->
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-6 col-lg-4 mt-5 mt-md-0">
+                        <div class="foot-contact">
+                            <h2>Contact</h2>
+
+                            <ul class="p-0 m-0">
+                                <li><span>Address:</span>Ismailia</li>
+                                <li><span>Phone:</span>01063979508</li>
+                                <li><span>Email:</span>islamelmogy_94@yahoo.com</li>
+                            </ul>
+                        </div>
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-6 col-lg-4 mt-5 mt-md-0">
+                        <div class="foot-links">
+                            <h2>Usefull Links</h2>
+
+                            <ul class="p-0 m-0">
+                                <li>@Html.ActionLink("Home", "Index", "RequestRegisterClinics")</li>
+                                <li><a href="/Staff/DisplayAboutUs">About us</a></li>
+                                <li><a href="#">Departments</a></li>
+                                <li>@Html.ActionLink("Contact", "Contact", "RequestRegisterClinics")</li>
+                                <li>@Html.ActionLink("FAQ", "Index", "RequestRegisterClinics")</li>
+                                
+                            </ul>
+                        </div><!-- .foot-links -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .footer-widgets -->
+    </footer><!-- .site-footer -->
+
+    <script src="~/temp/js/swiper.min.js"></script>
+    <script src="~/temp/js/swiper.js"></script>
+    <script src="~/temp/js/jquery.js"></script>
+    <script src="~/temp/js/jquery.countTo.min.js"></script>
+    <script src="~/temp/js/jquery.countdown.min.js"></script>
+    <script src="~/temp/js/jquery.countdown.js"></script>
+    <script src="~/temp/js/jquery.collapsible.min.js"></script>
+    <script src="~/temp/js/jquery.barfiller.js"></script>
+    <script src="~/temp/js/custom.js"></script>
+    <script src="~/temp/js/circle-progress.min.js"></script>
+    <script src="~/temp/js/bootstrap.min.js"></script>
+    <script src="~/temp/js/bootstrap.js"></script>
+ 
+
+</body>
+</html>

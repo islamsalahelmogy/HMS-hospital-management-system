@@ -1,0 +1,207 @@
+﻿@*<div class="sidebar-category sidebar-category-visible">
+    <div class="category-content no-padding">
+        <ul class="navigation navigation-main navigation-accordion mostafa">*@
+
+<div class="sidebar-category sidebar-category-visible">
+    <div class="category-content no-padding">
+        <ul class="navigation navigation-main navigation-accordion">
+
+            <li>
+                <a href="#"><i class="icon-magazine"></i> <span>  الاخبار </span></a>
+                <ul id="x">
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("FaqController_RegFaq"))
+                    {
+                        <li><a href="@Url.Action("RegFaq", "Faq")">اضافة خبر</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("FaqController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "Faq")">عرض الاخبار</a></li>
+                    }
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="icon-bag"></i> <span> الاقسام / المهن </span></a>
+                <ul id="x">
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("CareerController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "Career")">عرض المهن</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("CareerController_AddCareer"))
+                    {
+                        <li><a href="@Url.Action("AddCareer", "Career")">اضافة مهنة</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("DepartmentController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "Department")">عرض الاقسام</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("DepartmentController_AddDept"))
+                    {
+                        <li><a href="@Url.Action("AddDept", "Department")">اضافة الاقسام</a></li>
+                    }
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="icon-database-edit2"></i> <span>  الموظفين </span></a>
+                <ul id="x">
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("EmployeeController_AddEmp"))
+                    {
+                        <li><a href="@Url.Action("AddEmp", "Employee")">اضافة موظف</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("EmployeeController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "Employee")">عرض الموظفين</a></li>
+                    }
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="#"><i class="icon-stack2"></i> <span>  العياداات </span></a>
+                <ul id="x">
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("ClinicRegisterController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "ClinicRegister")">تأكيد حجز عيادة</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("ClinicRegisterController_ClinicRegister"))
+                    {
+                        <li><a href="@Url.Action("ClinicRegister", "ClinicRegister")">حجز عيادة </a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("PatientController_AddPatient"))
+                    {
+                        <li><a href="@Url.Action("AddPatient", "Patient")">تسجيل المرضي </a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("PatientController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "Patient")">عرض المرضي</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("DailyRegisteredPatientsController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "DailyRegisteredPatients")">العرض اليومي للعيادات المحجوزة</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("VisitsController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "Visits")">عدد المرضى </a></li>
+                    }
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="icon-reading"></i> <span>  الاطباء  </span></a>
+                <ul id="x">
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("StaffController_RegStaff"))
+                    {
+                        <li><a href="@Url.Action("RegStaff", "Staff")">تسجيل طبيب </a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("StaffController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "Staff")">عرض الاطباء</a></li>
+                    }
+
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="#"><i class="icon-profile"></i> <span>  كشف الطبيب </span></a>
+                <ul id="x">
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("Doctor_SheetController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "Doctor_Sheet")">كشف الطبيب</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("PatientVisitsDetailsController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "PatientVisitsDetails")">الملف الطبي للمريض</a></li>
+                    }
+                    @*<li><a href="@Url.Action("Index", "Doctor_Sheet")">الاستعلام عن المريض</a></li>*@
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="icon-aid-kit"></i> <span>  الدواء </span></a>
+                <ul id="x">
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("MedicineController_Add"))
+                    {
+                        <li><a href="@Url.Action("Add", "Medicine")">ادخال الدواء</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("MedicineController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "Medicine")">عرض الدواء</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("MedicineCompanyController_Add"))
+                    {
+                        <li><a href="@Url.Action("Add", "MedicineCompany")">ادخال شركة الادوية</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("MedicineCompanyController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "MedicineCompany")">عرض شركات الادوية</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("MainGroupMedicineController_Add"))
+                    {
+                        <li><a href="@Url.Action("Add", "MainGroupMedicine")">ادخال قئة الدواء  </a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("MainGroupMedicineController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "MainGroupMedicine")">عرض فئة الادوية  </a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("PartGroupMedicineController_Add"))
+                    {
+                        <li><a href="@Url.Action("Add", "PartGroupMedicine")">ادخال الفئة الفرعية للدواء </a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("PartGroupMedicineController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "PartGroupMedicine")">ادخال الفئة الفرعية للدواء </a></li>
+                    }
+
+                </ul>
+            </li>
+
+
+
+
+            <li>
+                <a href="#"><i class="icon-mail5"></i> <span>الرسايل</span></a>
+                <ul id="x">
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("RequestRegisterClinicsController_DisplayContactMessage"))
+                    {
+                        <li><a href="@Url.Action("DisplayContactMessage", "RequestRegisterClinics")">عرض الرسائل</a></li>
+                    }
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="icon-bag"></i> <span> تنشيط / تعطيل الحسابات </span></a>
+                <ul id="x">
+                    @*@if (HMS_ITI.Models.ViewModel.Settings.checkadmin())
+                {*@
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("LoginController_ApproveRegistration"))
+                    {
+                        <li><a href="@Url.Action("ApproveRegistration", "Login")">تنشيط الحسابات</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("LoginController_DisableAccount"))
+                    {
+                        <li><a href="@Url.Action("DisableAccount", "Login")">تعطيل الحسابات</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("RoleController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "Role")">تقسيم الصلاحيات</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("RoleController_AddRole"))
+                    {
+                        <li><a href="@Url.Action("AddRole", "Role")">ادخال الصلاحيات</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("ActionsNameController_Index"))
+                    {
+                        <li><a href="@Url.Action("Index", "ActionsName")">عرض الصفحات</a></li>
+                    }
+                    @if (HMS_ITI.Models.ViewModel.Settings.check("ActionsNameController_AddAction"))
+                    {
+                        <li><a href="@Url.Action("AddAction", "ActionsName")">ادخال الصفحات</a></li>
+                    }
+                    @*  *@}
+                </ul>
+            </li>
+
+            <!-- /page kits -->
+        </ul>
+    </div>
+</div>

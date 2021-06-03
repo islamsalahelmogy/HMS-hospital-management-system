@@ -1,0 +1,109 @@
+﻿@model IEnumerable<HMS_ITI.Models.Faq>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+
+
+
+
+
+
+<style>
+
+    .table-striped > tbody > tr:nth-child(odd) > td
+   {
+        background-color: #c2d4c4;
+    }
+
+    #add {
+        color: #00887a;
+    }
+
+        #add:hover,
+        #add:active,
+        #add:focus {
+            color: green;
+        }
+
+    #edit {
+        color: #00887a;
+    }
+
+        #edit:hover,
+        #edit:active,
+        #edit:focus {
+            color: blue;
+        }
+
+    #delete {
+        color: #00887a;
+    }
+
+        #delete:hover,
+        #delete:active,
+        #delete:focus {
+            color: red;
+        }
+</style>
+
+
+
+
+
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;"> عرض الاخبار</span>
+</div>
+<br />
+<div style="float:left">
+    @Html.ActionLink(" ", "RegFaq", null, htmlAttributes: new { @class = "btn btn-outline-primary btn-bg glyphicon glyphicon-plus", style = "font-size:18px", id = "add" })
+</div>
+<div style="float:none"></div>
+<table class="table table-hover table-striped table-responsive">
+    <tr style="background-color: #c2d4c4">
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublishDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th></th>
+    </tr>
+    <tbody id="DataSearching">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Image)*@
+                    <img src="~/images/@item.Image" width="50" height="50" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublishDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td style="text-align:center">
+                    @Html.ActionLink(" ", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-outline-danger btn-sm glyphicon glyphicon-trash", @onclick = "return confirm('Are you sure !')", id = "delete" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,112 @@
+﻿@model HMS_ITI.Models.Employee
+@{
+    ViewBag.Title = "تعديل موظف";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+
+}
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;">تعديل موظف</span>
+</div>
+<br />
+@using (Html.BeginForm("Edit", "Employee", FormMethod.Post, new { autocomplete = "off", enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(ww => ww.ID)
+
+
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <div class="heading-elements">
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(ww => ww.FirstName, new { @class = "form-control",
+                   placeholder = "الاسم الاول"
+               })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.FirstName, "", htmlAttributes: new { @class = "Error text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.SecondName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(ww => ww.SecondName, new
+               {
+                   @class = "form-control",
+                   placeholder = "الاسم الثاني"
+               })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.SecondName, "", htmlAttributes: new { @class = "Error text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+
+                    @Html.LabelFor(ww => ww.ThirdName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(ww => ww.ThirdName, new
+               {
+                   @class = "form-control",
+                   placeholder = "الاسم الثالث"
+               })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.ThirdName, "", htmlAttributes: new { @class = "Error text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.FourthName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(ww => ww.FourthName, new
+               {
+                   @class = "form-control",
+                   placeholder = "الاسم الرابع"
+               })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.FourthName, "", htmlAttributes: new { @class = "Error text-danger" })
+                    </b>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.SSN, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(ww => ww.SSN, new
+               {
+                   @class = "form-control",
+                   placeholder = "الرقم القومي"
+               })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.SSN, "", htmlAttributes: new { @class = "Error text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.Career.CareerType, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.DropDownListFor(ww => ww.Career_ID, ViewBag.career as SelectList, htmlAttributes: new { @class = "form-control" })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.Career.ID, "", htmlAttributes: new { @class = "error " })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.Department.DepartmentName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.DropDownListFor(ww => ww.Department_ID, ViewBag.department as SelectList, htmlAttributes: new { @class = "form-control" })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.Department_ID, "", htmlAttributes: new { @class = "error" })
+                    </b>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input type="file" name="Image" id="Image" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="text-right col-lg-12">
+                        <button type="submit" class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma">تم <i class=" icon-arrow-left13 position-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+

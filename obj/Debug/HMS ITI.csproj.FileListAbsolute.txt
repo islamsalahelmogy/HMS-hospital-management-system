@@ -1,0 +1,54 @@
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\HMS ITI.dll.config
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\HMS ITI.dll
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\HMS ITI.pdb
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\EntityFramework.dll
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\EntityFramework.SqlServer.dll
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\Microsoft.Web.Infrastructure.dll
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\System.Web.Helpers.dll
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\System.Web.Mvc.dll
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\System.Web.Razor.dll
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\System.Web.Webpages.Deployment.dll
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\System.Web.Webpages.dll
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\System.Web.Webpages.Razor.dll
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\EntityFramework.xml
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\EntityFramework.SqlServer.xml
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\System.Web.Razor.xml
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\System.Web.Webpages.xml
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\System.Web.Webpages.Deployment.xml
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\System.Web.Webpages.Razor.xml
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\System.Web.Helpers.xml
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\bin\System.Web.Mvc.xml
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\obj\Debug\HMS ITI.dll
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\obj\Debug\HMS ITI.pdb
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\obj\Debug\HMS_ITI.Migrations.first.resources
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\obj\Debug\HMS ITI.csproj.GenerateResource.Cache
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\obj\Debug\HMS_ITI.Migrations.SS.resources
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\obj\Debug\HMS_ITI.Migrations.SSa.resources
+E:\Hospital Managment ITI\HMS ITI\HMS ITI\obj\Debug\HMS ITI.csprojResolveAssemblyReference.cache
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\HMS ITI.dll.config
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\HMS ITI.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\HMS ITI.pdb
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\EntityFramework.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\EntityFramework.SqlServer.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Helpers.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Mvc.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Razor.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.Razor.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\EntityFramework.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\EntityFramework.SqlServer.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Razor.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Webpages.Razor.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Helpers.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\bin\System.Web.Mvc.xml
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Debug\HMS ITI.csproj.CoreCompileInputs.cache
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Debug\HMS ITI.csproj.CopyComplete
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Debug\HMS ITI.dll
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Debug\HMS ITI.pdb
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Debug\HMS_ITI.Migrations.ssssssssssssssssssssssssssssssssssssssss.resources
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Debug\HMS ITI.csproj.GenerateResource.cache
+C:\Users\Mogy\Desktop\v4\HMS ITI\HMS ITI\obj\Debug\HMS ITI.csprojAssemblyReference.cache

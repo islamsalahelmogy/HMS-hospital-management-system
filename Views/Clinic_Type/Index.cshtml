@@ -1,0 +1,62 @@
+﻿@model IEnumerable<HMS_ITI.Models.Clinic_Type>
+@{
+    ViewBag.Title = "العيادات";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:16px;padding:5px 30px;">عرض العيادات</span>
+</div>
+<br />
+<style>
+    #fixedbutton {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: seagreen;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        padding: 7px;
+    }
+</style>
+
+<a href='@Url.Action("AddClinic_Type", "Clinic_Type")'>
+    <div id="fixedbutton">
+        <span class="glyphicon glyphicon-plus " style="font-size:25px;color:lightblue"></span>
+    </div>
+</a>
+
+
+
+
+<br />
+
+<table class="table table-responsive table-striped table-hover">
+    <tr style="background-color: #c2d4c4">
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                <a href='@Url.Action("Edit", "Clinic_Type", new { id = item.ID})'>
+                    <span class="glyphicon glyphicon-edit " style="font-size:15px;padding:10px 10px"></span>
+                </a> |
+                <a href='@Url.Action("Delete", "Clinic_Type", new { id = item.ID })' onclick="return confirm('Are you sure you want to Delete?')">
+                    <span class="glyphicon glyphicon-trash " style="font-size:15px;padding:10px 10px"></span>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>
+

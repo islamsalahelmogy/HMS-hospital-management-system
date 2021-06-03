@@ -1,0 +1,95 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registered</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="~/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/css/core.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/css/components.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/css/colors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="login-container  pace-done">
+    <!-- Main navbar -->
+    <div class="navbar navbar-inverse bg-indigo">
+        <div class="navbar-header">
+            @*<a class="navbar-brand" href="index.html"><img src="assets/images/logo_light.png" alt=""></a>*@
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown dropdown-user">
+                <a class="dropdown-toggle legitRipple" data-toggle="dropdown" aria-expanded="false">
+                    <img src="~/assets/images/placeholder.jpg" alt="">
+                    <span>Hi @Session["UserName"]</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- /main navbar -->
+    <!-- Page container -->
+    <div class="page-container" style="min-height:507px">
+
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main content -->
+            <div class="content-wrapper">
+
+                <!-- Content area -->
+                <div class="content">
+
+                    <!-- Error title -->
+
+                    <div class="text-center content-group">
+                        <h1 class="error-title" style="font-size:120px;font-family:initial;color:Background"> Not Authorized  </h1>
+                        @*<h5>اذا كان لك تعليق فلتتركه لنا</h5>*@
+                    </div>
+                   
+                    <!-- /error title -->
+                    <!-- Error content -->
+                    @*<div class="row">
+                            <div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
+                                <form action="#" class="main-search panel panel-body">
+                                    <div class="form-group has-feedback">
+                                        <input type="text" class="form-control input-lg" placeholder="Search...">
+                                        <div class="form-control-feedback">
+                                            <i class="icon-search4 text-size-large text-muted"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <a href="#" class="btn bg-pink-400 legitRipple"><i class="icon-circle-left2 position-left"></i> Back to dashboard</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>*@
+
+                    <!-- /error wrapper -->
+                    <!-- Footer -->
+                    @*<div class="footer text-muted text-center">
+                            © 2019. <a href="#"></a> by <a href="#" target="_blank">Mostafa</a>
+                        </div>*@
+                    <!-- /footer -->
+
+                </div>
+                <!-- /content area -->
+
+            </div>
+            <!-- /main content -->
+
+        </div>
+        <!-- /page content -->
+
+    </div>
+    <!-- /page container -->
+
+
+
+</body>
+</html>

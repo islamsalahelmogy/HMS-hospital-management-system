@@ -1,0 +1,74 @@
+﻿@model IEnumerable<HMS_ITI.Models.ViewModel.ApproveRegistrationViewModel>
+@{
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+
+<style>
+
+
+    #app {
+        color: #00887a;
+    }
+
+        #app:hover,
+        #app:active,
+        #app:focus {
+            color: lightgreen;
+        }
+</style>
+
+
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;">تنشيط الحسابات</span>
+</div>
+<br />
+
+<table class="table table-hover table-striped table-responsive">
+    <thead style="background-color:#c2d4c4">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoleName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleName)
+            </td>
+            <td>
+                @Html.ActionLink(" ", "ApproveRegistration", new { id = item.ID }, htmlAttributes: new { @class = "btn btn-outline-primary btn-sm glyphicon glyphicon-ok", id = "app" })
+            </td>
+        </tr>
+    }
+</table>

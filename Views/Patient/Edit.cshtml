@@ -1,0 +1,130 @@
+﻿@model HMS_ITI.Models.Patient
+@{
+    ViewBag.Title = "تعديل مريض";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+
+}
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;">تعديل مريض</span>
+</div>
+<br />
+@using (Html.BeginForm("Edit", "Patient", FormMethod.Post, new { autocomplete = "off", enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(w => w.ID_Nozom)
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <div class="heading-elements">
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(ww => ww.FirstName, new { @class = "form-control",
+                   placeholder = "الاسم الاول"
+               })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.FirstName, "", htmlAttributes: new { @class = "Error text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.SecondName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(ww => ww.SecondName, new
+               {
+                   @class = "form-control",
+                   placeholder = "الاسم الثاني"
+               })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.SecondName, "", htmlAttributes: new { @class = "Error text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+
+                    @Html.LabelFor(ww => ww.ThirdName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(ww => ww.ThirdName, new
+               {
+                   @class = "form-control",
+                   placeholder = "الاسم الثالث"
+               })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.ThirdName, "", htmlAttributes: new { @class = "Error text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.FourthName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(ww => ww.FourthName, new
+               {
+                   @class = "form-control",
+                   placeholder = "الاسم الرابع"
+               })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.FourthName, "", htmlAttributes: new { @class = "Error text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.SSN, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(ww => ww.SSN, new
+               {
+                   @class = "form-control",
+                   placeholder = "الرقم القومي"
+               })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.SSN, "", htmlAttributes: new { @class = "Error text-danger" })
+                    </b>
+                </div>
+            </div>
+            <div class="col-sm-6">
+
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(ww => ww.Phone, new
+               {
+                   @class = "form-control",
+                   placeholder = "رقم الهاتف"
+               })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.Phone, "", htmlAttributes: new { @class = "Error text-danger" })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.BirthDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <input type="date" name="BirthDate" id="BirthDate" class="form-control" />
+                    @*@Html.TextBoxFor(m => m.BirthDate, "{0:MM/dd/yyyy}", new { maxlength = "12", @class = "date-picker form-control auto-focus" })*@
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.Nationality.Nationa, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.DropDownListFor(ww => ww.IdNationalty, ViewBag.nation as SelectList, htmlAttributes: new { @class = "form-control" })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.IdNationalty, "", htmlAttributes: new { @class = "error " })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.Sex_Type.TypeName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.DropDownListFor(ww => ww.IdType, ViewBag.sex as SelectList, htmlAttributes: new { @class = "form-control" })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.IdType, "", htmlAttributes: new { @class = "error" })
+                    </b>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.Religion._Religion, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.DropDownListFor(ww => ww.IdReligion, ViewBag.rel as SelectList, htmlAttributes: new { @class = "form-control" })
+                    <b>
+                        @Html.ValidationMessageFor(ww => ww.IdReligion, "", htmlAttributes: new { @class = "error" })
+                    </b>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="text-right col-lg-12">
+                        <button type="submit" class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma">تم <i class=" icon-arrow-left13 position-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+
+
+

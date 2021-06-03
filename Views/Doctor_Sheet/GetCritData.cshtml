@@ -1,0 +1,118 @@
+﻿@model HMS_ITI.Models.Crit_Data
+
+
+@{
+    var crt = (IEnumerable<HMS_ITI.Models.Crit_Data>)ViewBag.crt;
+    var critdt = (IEnumerable<HMS_ITI.Models.Critical_Data>)ViewBag.crt2;
+    var flag = true;
+}
+
+<style>
+
+    .table-striped > tbody > tr:nth-child(odd) > td,
+    .table-striped > tbody > tr:nth-child(odd) > th {
+        background-color: #c2d4c4;
+    }
+
+
+    #delete {
+        color: #00887a;
+    }
+
+        #delete:hover,
+        #delete:active,
+        #delete:focus {
+            color: red;
+        }
+
+    td, th {
+        text-align: center
+    }
+</style>
+
+
+
+
+
+@using (Html.BeginForm("CrtData", "Doctor_Sheet", FormMethod.Post, new { autocomplete = "off" }))
+{
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <div class="heading-elements">
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.Id_CriticalData, htmlAttributes: new { @class = "control-label col-sm-12" })
+
+                    @*@Html.DropDownListFor(model => model.Id_CriticalData, ViewBag.crtdta as SelectList, htmlAttributes: new { @class = "select-menu-color" })*@
+                    <select multiple size="1" class="form-control" name="IdNumberOfTakeMedicin" id="IdNumberOfTakeMedicin">
+                        @foreach (var item in ViewBag.crtdta)
+                        {
+                            if (flag)
+                            {
+                                <option style="font-size:16px;" value="@item.Value" selected>@item.Text</option>
+                            }
+                            else
+                            {
+                                <option style="font-size:16px;" value="@item.Value">@item.Text</option>
+                            }
+                            flag = false;
+                        }
+                    </select>
+                    <b>
+                        @Html.ValidationMessageFor(model => model.Id_CriticalData, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.Notes, htmlAttributes: new { @class = "control-label col-sm-12" })
+                    @Html.TextAreaFor(model => model.Notes, htmlAttributes: new { @class = "control-label col-sm-12", rows = "10", cols = "100", placeholder = "ملاحظات البيانات الحرجة", style = "resize:none" })
+                    <b>
+                        @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="text-right col-lg-12">
+                    <button type="submit" class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma">اضافة <i class=" icon-arrow-left13 position-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+
+<table class="table table-hover table-striped table-responsive">
+    <tr style="background-color: #c2d4c4">
+        <th>
+            @Html.DisplayNameFor(model => model.Id_CriticalData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in crt)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => critdt.FirstOrDefault(w=>w.ID==item.Id_CriticalData).Critic_Data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.ActionLink(" ", "DeleteCrt", new { id = item.ID }, htmlAttributes: new { @class = "btn btn-outline-danger btn-sm glyphicon glyphicon-trash", @onclick = "return confirm('Are you sure !')", id = "delete" })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,205 @@
+﻿@model IEnumerable<HMS_ITI.Models.Patient>
+@{
+    ViewBag.Title = "المرضي";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    var p = ViewBag.p as HMS_ITI.Models.Patient;
+
+}
+@*<a href="#" onclick="return getbyID(' + item.EmployeeID + ')">Edit</a> | <a href="#" onclick="Delele(' + item.EmployeeID + ')">Delete</a>*@
+
+
+
+@using (Html.BeginForm("GetSearchingData", "Patient", FormMethod.Get))
+{
+    <h5><label> ادخل الرقم القومي : </label></h5>
+    @Html.TextBox("Search")<input type="submit" id="SearchBtn" value="بحث" /><br /><br />
+}
+
+<style>
+    h5 {
+        font-size: 20px;
+    }
+
+    #Search {
+        outline: none;
+        border: 2px solid #00887a;
+        padding: 10px;
+        width: 30%;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        border-left: 0;
+    }
+
+    #SearchBtn {
+        padding: 12px 20px;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+        outline: none;
+        border: 0;
+        background-color: #00887a;
+        color: #FFF;
+        font-weight: bold;
+    }
+
+    .table-striped > tbody > tr:nth-of-type(even) {
+        background-color: #c2d4c4;
+    }
+
+
+    .table-striped > tbody > tr:nth-child(odd) > td,
+    .table-striped > tbody > tr:nth-child(odd) > th {
+        background-color: #c2d4c4;
+    }
+
+    #add {
+        color: #00887a;
+    }
+
+        #add:hover,
+        #add:active,
+        #add:focus {
+            color: green;
+        }
+
+    #edit {
+        color: #00887a;
+    }
+
+        #edit:hover,
+        #edit:active,
+        #edit:focus {
+            color: blue;
+        }
+
+    #delete {
+        color: #00887a;
+    }
+
+        #delete:hover,
+        #delete:active,
+        #delete:focus {
+            color: red;
+        }
+</style>
+
+
+
+
+
+<div style="float:left">
+    @Html.ActionLink(" ", "AddPatient", null, htmlAttributes: new { @class = "btn btn-outline-primary btn-bg glyphicon glyphicon-plus", style = "font-size:18px", id = "add" })
+</div>
+<div style="float:none"></div>
+@if(Model!=null)
+{ 
+<table class="table table-hover table-striped table-responsive" style="text-align:center">
+    <tr style="background-color: #c2d4c4; text-align:center">
+
+        <th style="text-align:center">
+            <b>الاسم بالكامل</b>
+        </th>
+
+        <th style="text-align:center">
+            @Html.DisplayNameFor(model => model.SSN)
+        </th>
+        <th style="text-align:center">
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th style="text-align:center">
+            <b>الجنسية</b>
+
+        </th >
+        <th style="text-align:center">
+            <b>النوع</b>
+        </th>
+        <th></th>
+    </tr>
+    <tbody id="DataSearching">
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.SecondName) @Html.DisplayFor(modelItem => item.ThirdName)   @Html.DisplayFor(modelItem => item.FourthName)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SSN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nationality.Nationa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex_Type.TypeName)
+                </td>
+                <td style="text-align:center">
+                    @Html.ActionLink(" ", "Edit", new { id = item.ID_Nozom }, htmlAttributes: new { @class = "btn btn-outline-primary btn-sm glyphicon glyphicon-pencil", id = "edit" })
+                    @Html.ActionLink(" ", "Delete", new { id = item.ID_Nozom }, htmlAttributes: new { @class = "btn btn-outline-danger btn-sm glyphicon glyphicon-trash", @onclick = "return confirm('Are you sure !')", id = "delete" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+@if (p != null)
+{
+    <table class="table table-hover table-striped table-responsive">
+        <tr style="background-color: #c2d4c4">
+
+            <th>
+                <b>الاسم بالكامل</b>
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.SSN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                <b>الجنسية</b>
+
+            </th>
+            <th>
+                <b>النوع</b>
+            </th>
+            <th></th>
+        </tr>
+        <tbody id="DataSearching">
+
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => p.FirstName) @Html.DisplayFor(modelItem => p.SecondName) @Html.DisplayFor(modelItem => p.ThirdName)   @Html.DisplayFor(modelItem => p.FourthName)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => p.SSN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => p.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => p.Nationality.Nationa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => p.Sex_Type.TypeName)
+                </td>
+                <td>
+
+                    <a href='@Url.Action("Edit", "Patient", new { id = p.ID_Nozom })'>
+                        <span class="glyphicon glyphicon-edit " style="font-size:15px;padding:7px"></span>
+                    </a>
+                    <a href='@Url.Action("Delete", "Patient", new { id = p.ID_Nozom })' onclick="return confirm('هل انت متأكد من المسح؟')">
+                        <span class="glyphicon glyphicon-trash " style="font-size:15px;padding:7px"></span>
+                    </a>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+}

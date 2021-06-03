@@ -1,0 +1,69 @@
+﻿@model IEnumerable<HMS_ITI.Models.RequestRegisterClinic>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    var d = ViewBag.depts as IEnumerable<HMS_ITI.Models.Department>;
+    var s = ViewBag.sext as IEnumerable<HMS_ITI.Models.Sex_Type>;
+}
+
+@if(!string.IsNullOrEmpty(ViewBag.Message))
+{
+<script type="text/javascript">alert("@ViewBag.Message");</script>
+}
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;">تأكيد حجز العيادات</span>
+</div>
+<br />
+
+<table class="table table-hover table-striped table-responsive">
+    <tr style="background-color: #c2d4c4">
+
+        <th>
+            <b>الاسم بالكامل</b>
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SSN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => d.FirstOrDefault(w => w.ID == model.Department_Id).DepartmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => s.FirstOrDefault(w => w.ID == model.Sex_id).TypeName)
+        </th>
+        <th></th>
+    </tr>
+    <tbody id="DataSearching">
+        @foreach (var item in Model)
+        {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.SecondName) @Html.DisplayFor(modelItem => item.ThirdName)   @Html.DisplayFor(modelItem => item.FourthName)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SSN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => d.FirstOrDefault(w => w.ID == item.Department_Id).DepartmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => s.FirstOrDefault(w => w.ID == item.Sex_id).TypeName)
+            </td>
+            <td>
+                <a href='@Url.Action("Edit", "ClinicRegister", new {item.ID})'>
+                    <span class="glyphicon glyphicon-edit " style="font-size:15px;padding:7px"></span>
+                </a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

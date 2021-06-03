@@ -1,0 +1,128 @@
+﻿@model HMS_ITI.Models.Employee
+@{
+    ViewBag.Title = "تفاصيل الموظف";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    
+}
+<style>
+    table {
+        margin: 0 auto;
+    }
+        
+</style>
+
+<div class="panel" style="background-color:#00887a">
+    <br />
+    <div class="thumbnail imgThumbnail" style="text-align:center;background-color:#c2d4c4">
+        @if (Model.Image == null)
+        {
+            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="card-img-top" style="width:200px;border-radius:50%" alt="avatar">
+        }
+        else
+        {
+            <img src="~/images/@Html.DisplayFor(w=>Model.Image)" class="card-img-top" style="width:250px;height:200px;border-radius:50%" alt="AAAA">
+        }
+        <div class="card-block text-center">
+            <h4 class="card-title">
+                بيانات الموظف
+            </h4>
+        </div>
+        <table class="list-group list-group-flush">
+            <tr>
+                <th><b>الاسم:</b></th>
+                <td class="list-group-item">@Model.FirstName @Model.SecondName @Model.ThirdName @Model.FourthName</tdclass="list-group-item">
+            </tr>
+            <tr>
+                <th><b>الرقم القومي:</b></th>
+                <td class="list-group-item">@Model.SSN </td>
+            </tr>
+            <tr>
+                <th><b>القسم:</b></th>
+                <td class="list-group-item">@Model.Department.DepartmentName</td>
+            </tr>
+            <tr>
+                <th><b>المهنة:</b></th>
+                <td class="list-group-item">@Model.Career.CareerType</td>
+            </tr>
+
+        </table>
+        <div class="card-block">
+            <a href='@Url.Action("Index")' class="card-link"><h4><b>رجوع</b></h4></a>
+           
+        </div>
+    </div>
+</div>
+
+
+@*<div class="card" style="max-width: 240px;">
+
+        <!-- Image -->
+        @if (Model.Image == null)
+        {
+            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="card-img-top" style="width:240px" alt="avatar">
+        }
+        else
+        {
+            <img src="~/images/@Html.DisplayFor(w=>Model.Image)" class="card-img-top" alt="AAAA">
+        }
+
+        <!-- Text Content -->
+        <div class="card-body">
+            <p class="card-text">
+                <ul class="list-group list-group-flush">
+                    <b>Full Name:</b>
+        <li class="list-group-item">@Model.FirstName @Model.SecondName @Model.ThirdName @Model.FourthName</li>
+        <b>
+            SSN:
+        </b>
+            <li class="list-group-item">@Model.SSN </li>
+            <b>
+                Department:
+            </b>
+                <li class="list-group-item">@Model.Department.DepartmentName</li>
+                <b>
+                    Clinic:
+                </b>
+                    <li class="list-group-item">@Model.Clinic_Type.Type</li>
+                    <b>
+                        Career:
+                    </b>
+                        <li class="list-group-item">@Model.Career.CareerType</li>
+
+    </ul>
+            </p>
+        </div>
+
+    </div>*@
+
+@*<div class="card" style="width: 18rem;">
+        @if (Model.Image == null)
+        {
+            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="card-img-top" alt="avatar">
+        }
+        else
+        {
+            <img src="~/images/@Html.DisplayFor(w=>Model.Image)" class="card-img-top" alt="AAAA">
+        }
+        <div class="card-body">
+            <h5 class="card-title">
+                بيانات الموظف
+            </h5>
+            <p class="card-text">
+                <ul class="list-group list-group-flush">
+                    Full Name:
+                    <li class="list-group-item">@Model.FirstName @Model.SecondName @Model.ThirdName @Model.FourthName</li>
+                    SSN:
+                    <li class="list-group-item">@Model.SSN </li>
+                    Department:
+                    <li class="list-group-item">@Model.Department.DepartmentName</li>
+                    Clinic:
+                    <li class="list-group-item">@Model.Clinic_Type.Type</li>
+                    Career:
+                    <li class="list-group-item">@Model.Career.CareerType</li>
+
+                </ul>
+            </p>
+            <a href="" class="btn btn-success">رجوع</a>
+        </div>
+    </div>*@

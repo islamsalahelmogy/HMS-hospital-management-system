@@ -1,0 +1,191 @@
+﻿@model HMS_ITI.Models.RequestRegisterClinic
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/master.cshtml";
+
+}
+
+<style>
+    .s {
+        display: block;
+        width: calc(50% - 5px);
+        padding: 12px 16px;
+        margin-bottom: 10px;
+        border: 0;
+        font-size: 12px;
+        font-style: italic;
+        color: #828282;
+        background: #f0f4f8;
+        outline: none;
+    }
+</style>
+
+
+
+
+<h2 class="d-flex align-items-center">Make an Appointment</h2>
+<div class="col-12 col-md-6 col-lg-4">
+
+</div>
+
+<form class="d-flex flex-wrap justify-content-between" method="post">
+    <input type="text" placeholder="fname" name="FirstName" id="FirstName" required>
+
+    <input type="text" placeholder="sec name" name="SecondName" id="SecondName" required>
+
+    <input type="text" placeholder="third name" name="ThirdName" id="ThirdName" required>
+
+    <input type="text" placeholder="fourth name" name="FourthName" id="FourthName" required>
+
+    <input type="text" placeholder="birthdate" class="s" onfocus="(this.type='date')" name="BirthDate" id="BirthDate" required>
+
+    <input type="text" placeholder="RegisteredDate" class="s" onfocus="(this.type='date')" name="RegisteredDate" id="RegisteredDate" required>
+
+    <select class="select-department" name="Department_Id" id="Department_Id">
+        @foreach (var item in ViewBag.depts)
+        {
+            <option value="@item.ID">@item.DepartmentName</option>
+        }
+    </select>
+
+    <input type="number" placeholder="ssn" id="SSN" name="SSN" required>
+
+    <select class="select-gender" name="Sex_id" id="Sex_id">
+        @foreach (var item in ViewBag.sext)
+        {
+            <option value="@item.ID">@item.TypeName</option>
+        }
+    </select>
+
+    <input type="number" placeholder="Phone" name="Phone" id="Phone" required>
+
+
+    <input class="button gradient-bg" type="submit" value="Boom Appoitnment">
+</form>
+
+
+
+
+
+
+
+@*@using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+    <h2>Make an appointment</h2>
+
+    <div class="form">
+        <div class="container">
+            @Html.ValidationSummary(true)
+            <div class="col-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FirstName)
+                    @Html.ValidationMessageFor(model => model.FirstName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SecondName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SecondName)
+                    @Html.ValidationMessageFor(model => model.SecondName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ThirdName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ThirdName)
+                    @Html.ValidationMessageFor(model => model.ThirdName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FourthName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FourthName)
+                    @Html.ValidationMessageFor(model => model.FourthName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BirthDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="date" name="BirthDate" id="BirthDate" />
+                    @Html.ValidationMessageFor(model => model.BirthDate)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.RegisteredDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="date" name="RegisteredDate" id="RegisteredDate" />
+                    @Html.ValidationMessageFor(model => model.RegisteredDate)
+                </div>
+            </div>
+                </div>
+           <div class="col-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Phone)
+                    @Html.ValidationMessageFor(model => model.Phone)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SSN, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SSN)
+                    @Html.ValidationMessageFor(model => model.SSN)
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Department_Id, "Department_Id", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Department_Id", ViewBag.depts as SelectList, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Department_Id, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Sex_id, "Sex_id", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Sex_id", ViewBag.sext as SelectList, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Sex_id, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Department_Id, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Department_Id)
+                    @Html.ValidationMessageFor(model => model.Department_Id)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Sex_id, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Sex_id)
+                    @Html.ValidationMessageFor(model => model.Sex_id)
+                </div>
+            </div>
+               </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Boom Appoitnment" class="button gradient-bg" />
+                </div>
+            </div>
+        </div>
+    </div>
+    }*@
+

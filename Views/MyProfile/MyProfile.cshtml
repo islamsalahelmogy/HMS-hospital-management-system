@@ -1,0 +1,66 @@
+﻿@model HMS_ITI.Models.ViewModel.ApproveRegistrationViewModel
+@{
+    ViewBag.Title = "MyProfile";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div style="text-align:center">
+    <div class="col-md-12">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h6 class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma">@Html.ActionLink("الصفحة الشخصية", "ChangePassword")</h6>
+                <div class="heading-elements">
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table" style="text-align:center">
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.DepartmentName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.DepartmentName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Password)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Password)
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.RoleName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.RoleName)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Image)
+                        </td>
+                        <td>
+                            <img src="@Model.Image" class="thumbnail"/>
+                        </td>
+
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

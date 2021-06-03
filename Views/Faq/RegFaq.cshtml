@@ -1,0 +1,83 @@
+﻿@model HMS_ITI.Models.Faq
+
+@{
+    ViewBag.Title = "اضافة خبر";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;">اضافة خبر</span>
+</div>
+<br />
+@using (Html.BeginForm("RegFaq", "Faq", FormMethod.Post, new { enctype = "multipart/form-data" ,autocomplete="off"}))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <div class="heading-elements">
+            </div>
+        </div>
+        <div class="panel-body">
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                @Html.LabelFor(ww => ww.Title, htmlAttributes: new { @class = "control-label col-sm-12" })
+
+                @Html.TextBoxFor(model => model.Title, new
+                {
+                    @class = "form-control",
+                    placeholder = "العنوان"
+                })
+                <b>
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </b>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(ww => ww.Description, htmlAttributes: new { @class = "control-label col-sm-12" })
+
+                @Html.TextAreaFor(model => model.Description, new
+                {
+                    @class = "form-control",
+                    placeholder = "التفاصيل"
+                })
+                <b>
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </b>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(ww => ww.PublishDate, htmlAttributes: new { @class = "control-label col-sm-12" })
+
+                <input type="date" placeholder="PublishDate" class="form-control" name="PublishDate" id="PublishDate">
+                <b>
+                    @Html.ValidationMessageFor(model => model.PublishDate, "", new { @class = "text-danger" })
+                </b>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(ww => ww.Image, htmlAttributes: new { @class = "control-label col-sm-12" })
+
+                <input type="file" name="Image" id="Image" required />
+                <b>
+                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                </b>
+            </div>
+
+            <div class="form-group">
+                <div class="text-right col-lg-12">
+                    <button type="submit" class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma">اضافة <i class=" icon-arrow-left13 position-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+

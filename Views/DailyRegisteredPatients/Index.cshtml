@@ -1,0 +1,140 @@
+﻿@model IEnumerable<HMS_ITI.Models.ViewModel.RegisteredViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<style>
+    h5 {
+        font-size: 20px;
+    }
+
+    #Search {
+        outline: none;
+        border: 2px solid #00887a;
+        padding: 10px;
+        width: 30%;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        border-left: 0;
+    }
+
+    #SearchBtn {
+        padding: 12px 20px;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+        outline: none;
+        border: 0;
+        background-color: #00887a;
+        color: #FFF;
+        font-weight: bold;
+    }
+    .table-striped > tbody > tr:nth-of-type(even) {
+        background-color: #c2d4c4;
+    }
+</style>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#SearchBtn").click(function () {
+            var SearchValue = $("#Search").val();
+            var SetData = $("#DataSearching");
+            SetData.html("");
+            $.ajax({
+                type: "post",
+                url: "/DailyRegisteredPatients/GetSearchingData?SearchValue=" + SearchValue,
+                contentType: "html",
+                success: function (result) {
+                    if (result.length == 0) {
+                        SetData.append('No Data')
+                    }
+                    else {
+                        $.each(result, function (index, value) {
+                            var Data = "<tr>" +
+                                "<td>" + value.ID_Nozom + "</td>" +
+                                "<td>" + value.FullName + "</td>" +
+                                "<td>" + ToJavaScriptDate(value.TimeComing) + "</td>" +
+                                "<td>" + value.counterNumber + "</td>" +
+                                "<td>" + value.ID_Frequancy + "</td>" +
+                                "<td>" + value.DepartmentName + "</td>" +
+                                "<td></td>" +
+                                "</tr>";
+                            SetData.append(Data);
+
+                        });
+                    }
+                }
+            });
+            function ToJavaScriptDate(date) {
+                //debugger;
+                var value = new Date
+                            (
+                                 parseInt(date.replace(/(^.*\()|([+-].*$)/g, ''))
+                            );
+                var month = value.getMonth() + 1;
+                if (month < 10)
+                    month = "0" + month;
+                var day = value.getDate();
+                if (day < 10)
+                    day = "0" + day;
+                var dat = day + "/" + month + "/" + value.getFullYear();
+                return dat;
+            }
+        });
+    });
+</script>
+
+<div class="row" style="text-align:center ">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px; background-color:#00887a">العرض اليومي</span>
+</div>
+<h5><label> ادخل رقم النظم : </label></h5>
+@Html.TextBox("Search")<input type="submit" id="SearchBtn" value="بحث" /><br /><br />
+<table class="table table-hover table-striped table-responsive">
+    <tr style="background-color: #c2d4c4">
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Nozom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeComing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.counterNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Frequancy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentName)
+        </th>
+        <th></th>
+    </tr>
+    <tbody id="DataSearching">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_Nozom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeComing)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.counterNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_Frequancy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartmentName)
+                </td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>

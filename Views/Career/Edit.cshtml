@@ -1,0 +1,46 @@
+﻿@model HMS_ITI.Models.Career
+
+@{ 
+    ViewBag.Title = "تعديل وظيفة";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+
+}
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;">تعديل مهنة</span>
+</div>
+<br />
+@using (Html.BeginForm("Edit", "Career", FormMethod.Post, new { autocomplete = "off" }))
+{
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <div class="heading-elements">
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    @Html.LabelFor(ww => ww.CareerType, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(model => model.CareerType, new
+                       {
+                           @class = "form-control",
+                           placeholder = "اسم المهنه"
+                       })
+                    <b>
+                        @Html.ValidationMessageFor(model => model.CareerType, "", new { @class = "text-danger" })
+                    </b>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="text-right col-lg-12">
+                    <button type="submit" class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma">OK <i class=" icon-arrow-left13 position-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+}
+
+

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<HMS_ITI.Models.Medicine_Company>
+@{
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+
+}
+
+
+<style>
+
+    .table-striped > tbody > tr:nth-child(odd) > td,
+    .table-striped > tbody > tr:nth-child(odd) > th {
+        background-color: #c2d4c4;
+    }
+
+    #add {
+        color: #00887a;
+    }
+
+        #add:hover,
+        #add:active,
+        #add:focus {
+            color: green;
+        }
+
+    #edit {
+        color: #00887a;
+    }
+
+        #edit:hover,
+        #edit:active,
+        #edit:focus {
+            color: blue;
+        }
+
+    #delete {
+        color: #00887a;
+    }
+
+        #delete:hover,
+        #delete:active,
+        #delete:focus {
+            color: red;
+        }
+</style>
+
+
+
+<div class="row" style="text-align:center ">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px; background-color:#00887a">الشركات</span>
+</div>
+
+<div style="float:left">
+    @Html.ActionLink(" ", "Add", null, htmlAttributes: new { @class = "btn btn-outline-primary btn-bg glyphicon glyphicon-plus", style = "font-size:18px", id = "add" })
+</div>
+
+
+<div style="float:none"></div>
+<div id="meds">
+
+
+    <table class="table table-hover table-striped table-responsive">
+        <tr style="background-color: #c2d4c4">
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name_Company)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name_Company)
+            </td>
+
+
+            <td style="text-align:center">
+                @Html.ActionLink(" ", "Edit", new { id = item.ID }, htmlAttributes: new { @class = "btn btn-outline-primary btn-sm glyphicon glyphicon-pencil", id = "edit" })
+                @Html.ActionLink(" ", "Delete", new { id = item.ID }, htmlAttributes: new { @class = "btn btn-outline-danger btn-sm glyphicon glyphicon-trash", @onclick = "return confirm('Are you sure !')", id = "delete" })
+            </td>
+        </tr>
+        }
+
+    </table>
+
+
+</div>
+
+
+

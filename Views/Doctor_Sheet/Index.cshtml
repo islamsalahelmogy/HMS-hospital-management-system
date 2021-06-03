@@ -1,0 +1,61 @@
+﻿@model IEnumerable<HMS_ITI.Models.ViewModel.PatientViewmodel>
+@{
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    
+}
+<div class="row" style="text-align:center">
+    <span class="panel-title btn btn-info" style="color:#fff;font-family:Tahoma;font-size:18px;padding:5px 30px;">كشف الطبيب</span>
+</div>
+<br />
+<div class="panel panel-flat">
+    <br />
+    <form method="post" action="/Doctor_Sheet/Index">
+        <table>
+            <tr>
+                <td style="padding-left: 100px; padding-right: 50px"><b>رقم المريض</b> </td>
+                <td>
+                    <input type="text" name="ID_Nozom" value="@ViewBag.IdNozom" id="ID_Nozom" class="form-control" placeholder="رقم المريض" />
+                </td>
+                <td>
+                    <input type="submit" value="بحث" class="btn btn-info" />
+                </td>
+            </tr>
+            @*<tr>
+                <td style="padding-left:100px;padding-right:50px">
+                    <b>الاســـــــــم</b>
+                </td>
+                <td style="padding-left: 10px">
+                    <input type="text" name="FirstName" id="FirstName" class="form-control" placeholder="الاسم الاول" />
+                </td>
+                <td>
+                    <input type="text" name="SecondName" id="SecondName" class="form-control" placeholder="الاسم الثانى" />
+                </td>
+                <td style="padding-left: 10px">
+                    <input type="submit" value="بحث" class="btn btn-info" />
+                </td>
+            </tr>*@
+        </table>
+    </form>
+    <br />
+    <br />
+</div>
+    <br />
+<div class="panel panel-flat">
+    <table class="table table-bordered" style="overflow: scroll">
+        <tr>
+            <th>
+                عرض المرضى
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Action("patient", "Doctor_sheet", new { ID = item.ID_Nozom })">
+                        @Html.DisplayFor(w => item.PatientName)
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
